@@ -1,0 +1,47 @@
+body{
+  background-color: rgb(249, 227, 250);
+}
+
+.flexbox-kontejner{
+  display: flex;
+  height: 95vh
+}
+
+.flexbox-kontejner{
+ /* width: 15%;*/
+  background-color: rgb(138, 245, 234);
+  color: rgb(26, 28, 29); border: 2px solid rgb(50, 84, 90);
+  font-size: 2em;
+  padding:20px;
+  justify-content: center;
+  align-self: center;
+}
+
+.flexbox-1{
+  min-height: 50px;
+  /*flex-grow: 1;
+  flex-shrink: 1;*/
+  flex: 1 1 15%;
+  background-color: gray;
+  /*align-self: center;*/
+  order: 2
+}
+
+.flexbox-2{
+  min-height: 100px;
+  /*flex-grow: 4;
+  flex-shrink: 4;*/
+  flex: 1 1 25%;
+  background-color: darkgray;
+  align-self: center;
+  order:1
+}
+.flexbox-3{
+  min-height: 150px;
+  /*flex-grow: 1;
+  flex-shrink: 3;*/
+  flex: 5 5 25%;
+  background-color: rgb(88, 88, 88);
+  align-self: top;
+  order:3
+}
