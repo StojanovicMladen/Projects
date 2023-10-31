@@ -1,0 +1,195 @@
+body {
+  font-family: 'Playfair Display', sans-serif;
+}
+
+/* Images */
+.slika {
+    display: block;
+    background: url(./images/1kakao.jpg) center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+    width: 100%;
+    margin-top: -1.5vh;
+  }
+
+  .tamna-cokolada, .mlecna-cokolada {
+    width: 608px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bela-cokolada {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .images, .image-1, .image-2, .image-3 {
+    display: inline;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-1 {
+    margin-right: 0;
+    width: 300px;
+}
+
+.image-2{
+    margin-left: 0;
+}
+
+.image-3 {
+    grid-column: 1/ span 2;
+}
+
+/* Navbar */
+nav {
+    background-color: #993300;
+    height: 60px;
+    width: 100%;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  nav li {
+    margin-right: 10px;
+  }
+  
+  nav li a, a {
+    font-size: 24px;
+    text-shadow: 2px 2px #000000;
+    color: white;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  a:hover {
+    color: #a64d00;
+    transition: 0.5s;
+  }
+  
+  /* Main */
+  main {
+    background: url(./images/01\ crna\ cokolada\ 01.jpg) center;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  main h1 {
+    font-size: 60px;
+    color: white;
+    text-shadow: 2px 2px #000000;
+  }
+  
+  h2 {
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px #000000;
+    margin-top: 20px;
+    border: #993300;
+    padding: 16px 32px;
+    background: #993300;
+    opacity: 100%;
+  }
+
+  h2:hover {
+    opacity: 90%;
+    transition: 0.5s;
+  }
+  
+  /* Section/Article */
+  section, article {
+    margin: 50px auto;
+    max-width: 800px;
+    text-align: justify;
+  }
+  
+  section h3, article h3, h4 {
+    font-size: 30px;
+    color: #993300;
+    text-align: center;
+  }
+  
+  section p, article p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 20px;
+  }
+  
+  /* Table */
+  table {
+    margin: 50px auto;
+    border-collapse: collapse;
+    color: white;
+    background: #993300;
+  }
+  
+  table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Contact */
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  form label {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  form input, form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  
+  form input[type="submit"] {
+    background-color: #993300;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #a64d00;
+  }
+  
+  /* Video */
+  section iframe {
+    margin: 50px auto;
+    display: block;
+  }
+
+  /*Footer*/
+  footer p {
+    background: #993300;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+  }
+  
