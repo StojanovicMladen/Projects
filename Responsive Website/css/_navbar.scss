@@ -1,0 +1,285 @@
+@import "colors";
+@import "media-queries";
+
+%align-center {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  font-family: "Quicksand";
+}
+
+.navbar {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  background-color: $white;
+  border-bottom: solid 1px $shadow;
+  justify-content: space-between;
+  padding: 0.5rem calc((100vw - 1200px) / 2);
+
+  &__logo {
+    color: $black;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 2vw;
+    position: relative;
+    @extend %align-center;
+
+    @include between {
+      margin-left: 3vw;
+    }
+
+    @include tablet {
+      margin-left: 5vw;
+    }
+
+    h1 {
+      font-size: 35px;
+      font-weight: 500;
+
+      @include tablet {
+        font-size: 25px;
+        padding-left: 3vw;
+      }
+    }
+
+    strong {
+      color: $red;
+    }
+  }
+
+  &__menu {
+    @extend %align-center;
+    list-style: none;
+    text-align: center;
+    margin-right: -10vw;
+
+    @include between {
+      margin-right: 0vw;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0px 20px;
+      font-size: 16px;
+      color: $black;
+      text-decoration: none;
+
+      @include between {
+        font-size: 14px;
+        padding: 0px 5px;
+      }
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &--dropdown {
+      overflow: hidden;
+    }
+
+    &--dropdown &--dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: $black;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+
+      @include between {
+        font-size: 14px;
+      }
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    a:hover,
+    &--dropdown:hover &--dropbtn {
+      color: $red;
+    }
+
+    &--dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: $lightsilver;
+      border-radius: 5px;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px 0px $shadow;
+      z-index: 1;
+    }
+
+    &--dropdown-content a {
+      float: none;
+      color: $black;
+      padding: 8px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    &--dropdown-content a:hover {
+      background-color: $white;
+    }
+
+    &--dropdown:hover &--dropdown-content {
+      display: block;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  // Sidenav
+
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    text-align: center;
+    background-color: $white;
+
+    &__logo {
+      color: $black;
+      cursor: pointer;
+      text-decoration: none;
+      margin-left: 5vw;
+      position: relative;
+      @extend %align-center;
+      margin-right: 10vw;
+      padding-top: 0.5vh;
+      padding-bottom: 0.5vh;
+
+      h2 {
+        font-size: 35px;
+        font-weight: 500;
+
+        @include tablet {
+          font-size: 25px;
+          padding-left: 3vw;
+        }
+      }
+
+      strong {
+        color: $red;
+      }
+    }
+
+    &__burger {
+      a {
+        padding-right: 2vw;
+        padding-top: 0.5vh;
+        font-size: 30px;
+        cursor: pointer;
+        display: none;
+
+        @include tablet {
+          display: block;
+        }
+      }
+    }
+
+    &__menu {
+      border-top: solid 1px $shadow;
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      display: block;
+      font-size: 20px;
+      color: $black;
+      text-align: left;
+      background-color: $white;
+
+      &--items {
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        font-size: 15px;
+        padding-left: 8vw;
+        margin-bottom: 2vh;
+        color: $black;
+      }
+    }
+  }
+
+  .closebtn {
+    position: relative;
+    padding-right: 1vw;
+    padding-top: 1.5vh;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    color: $black;
+    font-size: 30px;
+
+    @include mobile {
+      position: relative;
+      padding-right: 2vw;
+    }
+  }
+
+  a:hover {
+    color: $red;
+    transition: 0.3s;
+  }
+
+  .sidenav .closebtn {
+    position: absolute;
+    top: -1vh;
+    right: 1vw;
+    font-size: 50px;
+    height: 8vh;
+  }
+
+  // Hexagon
+
+  .hexagon {
+    position: relative;
+    width: 47.5px;
+    height: 27.42px;
+    background-color: $white;
+    margin: 13.71px 0;
+    border-left: solid 10px $blue;
+    border-right: solid 10px $teal;
+    left: 20px;
+  }
+  .hexagon:before,
+  .hexagon:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 33.58px;
+    height: 33.58px;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    background-color: inherit;
+    left: -3px;
+  }
+  .hexagon:before {
+    top: -16.7937px;
+    border-top: solid 14.1421px $brick;
+    border-right: solid 14.1421px $charcoal;
+  }
+  .hexagon:after {
+    bottom: -16.7937px;
+    border-bottom: solid 14.1421px $red;
+    border-left: solid 14.1421px $darksilver;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+}

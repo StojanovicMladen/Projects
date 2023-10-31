@@ -1,0 +1,189 @@
+@import "colors";
+@import "media-queries";
+
+%align-center {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  font-family: "Quicksand";
+}
+
+.footer1 {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  background-color: $white;
+  border: solid 1px $shadow;
+  justify-content: space-between;
+  padding: 0.5rem calc((100vw - 1200px) / 2);
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  &__logo {
+    color: $black;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 2vw;
+    position: relative;
+    @extend %align-center;
+
+    @include between {
+      margin-left: 3vw;
+    }
+
+    @include tablet {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 2;
+      margin-left: 5vw;
+    }
+
+    @include smallTablet {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 1;
+      justify-content: center;
+      padding-bottom: 0vh;
+      padding-top: 0vh;
+      margin-left: 0;
+    }
+
+    a {
+      font-size: 35px;
+      font-weight: 500;
+
+      @include smallTablet {
+        font-size: 25px;
+        padding: 10vw;
+      }
+    }
+
+    strong {
+      color: $red;
+    }
+  }
+
+  &__menu {
+    @extend %align-center;
+    list-style: none;
+    text-align: center;
+    margin-right: 0px;
+
+    @include tablet {
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 1;
+      justify-content: right;
+    }
+
+    @include smallTablet {
+      grid-column: 1 / span 2;
+      grid-row: 3 / span 1;
+      justify-content: center;
+      padding-bottom: 2vh;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0px 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: $black;
+      text-decoration: none;
+
+      @include tablet {
+        font-size: 10px;
+      }
+
+      @include smallTablet {
+        padding: 10px;
+      }
+    }
+
+    a:hover {
+      color: $red;
+    }
+  }
+
+  &__social {
+    display: flex;
+    margin-left: 10vw;
+
+    @include tablet {
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 1;
+      justify-content: right;
+      padding-right: 4vw;
+    }
+
+    @include smallTablet {
+      grid-column: 1 / span 2;
+      grid-row: 2 / span 1;
+      justify-content: center;
+      padding-bottom: 2vh;
+      margin-left: 0;
+    }
+
+    a {
+      color: $blue;
+      @extend %align-center;
+      justify-content: space-between;
+      margin-left: 2vw;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+
+      @include smallTablet {
+        font-size: 22px;
+      }
+    }
+
+    a:hover {
+      color: lightblue;
+    }
+  }
+
+  // Hexagon
+
+  .hexagon {
+    position: relative;
+    width: 47.5px;
+    height: 27.42px;
+    background-color: $white;
+    margin: 13.71px 0;
+    border-left: solid 10px $blue;
+    border-right: solid 10px $teal;
+    left: 20px;
+  }
+  .hexagon:before,
+  .hexagon:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 33.58px;
+    height: 33.58px;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    background-color: inherit;
+    left: -3px;
+  }
+  .hexagon:before {
+    top: -16.7937px;
+    border-top: solid 14.1421px $brick;
+    border-right: solid 14.1421px $charcoal;
+  }
+  .hexagon:after {
+    bottom: -16.7937px;
+    border-bottom: solid 14.1421px $red;
+    border-left: solid 14.1421px $darksilver;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+}

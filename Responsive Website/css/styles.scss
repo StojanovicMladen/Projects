@@ -1,0 +1,1009 @@
+@import "navbar";
+@import "footer";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand";
+}
+
+// Button
+
+%button-settings {
+  font-size: 1rem;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 2rem;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  margin-bottom: 10vh;
+  z-index: 2;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.button {
+  &__button1 {
+    background-color: $red;
+    border: 2px solid $red;
+    color: $white;
+    @extend %button-settings;
+  }
+
+  &__button2 {
+    background-color: $white;
+    color: $brick;
+    @extend %button-settings;
+  }
+}
+
+.button__button1:hover {
+  background-color: $white;
+  color: $red;
+  border: 2px solid $red;
+}
+
+.button__button2:hover {
+  background-color: $red;
+  color: $white;
+}
+
+// Main Section
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0px;
+  min-height: 90vh;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+  }
+
+  &__item1 {
+    background: url(../images/img1.jpg) center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-column: 1 / span 1;
+    min-height: 90vh;
+    max-width: 50vw;
+
+    @include tablet {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+      max-height: 50vh;
+      min-height: 300px;
+      max-width: 100vw;
+    }
+  }
+
+  &__item2 {
+    background-color: $white;
+    grid-column: 2 / span 1;
+    min-height: 90vh;
+    padding-right: 0;
+    max-width: 50vw;
+
+    @include tablet {
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 1;
+      //max-height: 50vh;
+      min-height: 300px;
+      max-width: 100vw;
+    }
+
+    h2 {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      color: $black;
+      padding-left: 3vw;
+      padding-right: 0vw;
+      padding-top: 150px;
+      padding-bottom: 5vh;
+      text-align: left;
+      font-size: 56px;
+
+      @include between {
+        padding-top: 15vh;
+      }
+
+      @include tablet {
+        padding-top: 10vh;
+        padding-bottom: 3vh;
+        font-size: 50px;
+      }
+
+      @include betweenMobile {
+        font-size: 40px;
+        padding-top: 5vh;
+      }
+
+      @include mobile {
+        padding-top: 2vh;
+        padding-bottom: 3vh;
+        padding-right: 3vw;
+        font-size: 36px;
+      }
+
+      @include smallMobile {
+        font-size: 28px;
+        padding-top: 5vh;
+      }
+    }
+
+    p {
+      color: $charcoal;
+      padding-left: 3vw;
+      padding-right: 10vw;
+      padding-bottom: 0vw;
+      text-align: left;
+      font-size: 24px;
+
+      @include tablet {
+        font-size: 20px;
+      }
+
+      @include mobile {
+        padding-right: 3vw;
+        font-size: 18px;
+      }
+
+      @include smallMobile {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &--btn {
+    display: grid;
+    justify-items: left;
+    margin: 0 auto;
+    z-index: 1;
+    width: 100%;
+    padding-right: 3vw;
+    padding-left: 3vw;
+
+    @include mobile {
+      justify-items: stretch;
+    }
+  }
+}
+
+.main > div {
+  text-align: center;
+  padding: 0;
+}
+
+// Mission Section
+
+.mission {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 0px;
+  padding: 0px;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100%;
+  }
+
+  &__item1 {
+    background-color: $blue;
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 2;
+    max-width: 50vw;
+    min-height: 100vh;
+    padding-right: 0;
+
+    @include tablet {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 1;
+      max-width: 100vw;
+      max-height: 50vh;
+      min-height: 300px;
+    }
+
+    %mission-text {
+      color: $white;
+      padding-left: 10vw;
+      padding-right: 3vw;
+      text-align: left;
+    }
+
+    h2 {
+      padding-top: 30vh;
+      padding-bottom: 5vh;
+      font-size: 46px;
+      @extend %mission-text;
+
+      @include tablet {
+        padding-top: 5vh;
+        padding-bottom: 3vh;
+        padding-left: 3vw;
+        font-size: 40px;
+      }
+
+      @include mobile {
+        font-size: 30px;
+      }
+    }
+
+    p {
+      padding-bottom: 3vh;
+      font-size: 24px;
+      @extend %mission-text;
+
+      @include tablet {
+        font-size: 20px;
+        padding-bottom: 1vh;
+        padding-left: 3vw;
+      }
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__item2 {
+    background: url(../images/img2.jpg) center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-column: 3 / span 2;
+    max-width: 50vw;
+    min-height: 40vh;
+
+    @include tablet {
+      grid-column: 1 / span 2;
+      grid-row: 2 / span 1;
+      max-width: 100vw;
+      max-height: 50vh;
+      min-height: 300px;
+    }
+  }
+
+  %mission-items {
+    background-color: $lightsilver;
+    max-width: 25vw;
+
+    @include tablet {
+      max-width: 50vw;
+      max-height: 50vh;
+      min-height: 300px;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    p {
+      color: $red;
+      padding-top: 7.5vh;
+      text-align: left;
+      font-size: 26px;
+      font-weight: 600;
+
+      @include tablet {
+        padding-top: 5vh;
+        font-size: 20px;
+      }
+
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+
+    h3 {
+      color: $charcoal;
+      text-align: left;
+      font-size: 20px;
+      font-weight: 400;
+
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__item3 {
+    @extend %mission-items;
+
+    @include tablet {
+      grid-column: 1 / span 1;
+      grid-row: 3 / span 1;
+    }
+
+    p {
+      padding-left: 4vw;
+    }
+
+    h3 {
+      padding-left: 4vw;
+    }
+  }
+
+  &__item4 {
+    @extend %mission-items;
+
+    @include tablet {
+      min-width: 50vw;
+      grid-column: 2 / span 1;
+      grid-row: 3 / span 1;
+    }
+
+    p {
+      margin-left: -5vw;
+
+      @include between {
+        margin-left: 0;
+      }
+
+      @include tablet {
+        padding-left: 10vw;
+      }
+    }
+
+    h3 {
+      margin-left: -5vw;
+
+      @include between {
+        margin-left: 0;
+      }
+
+      @include tablet {
+        padding-left: 10vw;
+      }
+    }
+  }
+
+  &__item3n4-mobile {
+    display: none;
+
+    @include mobile {
+      display: grid;
+      max-height: 50vh;
+      min-height: 300px;
+    }
+
+    p {
+      color: $red;
+      padding-left: 4vw;
+      padding-top: 2vh;
+      text-align: left;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    h3 {
+      color: $charcoal;
+      padding-left: 4vw;
+      text-align: left;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  &--btn {
+    display: grid;
+    justify-items: left;
+    margin: 0 auto;
+    z-index: 1;
+    width: 100%;
+    padding-right: 3vw;
+    padding-left: 10vw;
+
+    @include tablet {
+      padding-left: 3vw;
+    }
+
+    @include mobile {
+      justify-items: stretch;
+    }
+  }
+}
+
+.mission > div {
+  text-align: center;
+  padding: 0;
+}
+
+// Stats Section
+
+.stats {
+  display: grid;
+  background-color: $teal;
+
+  %stats-text {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+    background-color: $teal;
+  }
+
+  &__header {
+    grid-template-columns: 1fr;
+    column-gap: 10px;
+    row-gap: 1em;
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 8vh;
+    min-height: 50px;
+    max-height: 125px;
+    @extend %stats-text;
+
+    @include mobile {
+      min-height: 150px;
+    }
+
+    h2 {
+      font-size: 30px;
+      padding-bottom: 10vh;
+
+      @include tablet {
+        font-size: 25px;
+      }
+    }
+  }
+
+  &__info {
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 2em;
+    min-height: 150px;
+    max-height: 200px;
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    @extend %stats-text;
+
+    @include smallTablet {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      min-height: 450px;
+    }
+
+    h3 {
+      font-size: 70px;
+      text-align: center;
+
+      @include tablet {
+        font-size: 60px;
+      }
+    }
+
+    p {
+      text-align: center;
+
+      @include tablet {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &__text {
+    grid-template-columns: 1fr;
+    column-gap: 10px;
+    row-gap: 1em;
+    min-height: 50px;
+    max-height: 100px;
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    @extend %stats-text;
+
+    @include mobile {
+      min-height: 100px;
+    }
+
+    p {
+      padding-left: 35vw;
+      padding-right: 35vw;
+      text-align: center;
+
+      @include between {
+        padding-left: 30vw;
+        padding-right: 30vw;
+      }
+
+      @include tablet {
+        padding-left: 20vw;
+        padding-right: 20vw;
+      }
+
+      @include mobile {
+        padding-left: 5vw;
+        padding-right: 5vw;
+        font-size: 15px;
+      }
+    }
+  }
+
+  &--btn {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    min-height: 75px;
+    max-height: 100px;
+    z-index: 1;
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 20vh;
+
+    @include mobile {
+      justify-items: stretch;
+      padding-right: 3px;
+      padding-left: 3px;
+    }
+  }
+}
+
+// Review Section
+
+.review {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0px;
+  padding: 0px;
+  background-color: $brick;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100%;
+  }
+
+  &__item1 {
+    background-color: $brick;
+    grid-column: 1 / span 1;
+    max-width: 50vw;
+    padding-right: 0;
+
+    @include tablet {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+      max-width: 100vw;
+      max-height: 25vh;
+      min-height: 300px;
+    }
+
+    %review-text {
+      color: $white;
+      padding-left: 10vw;
+      padding-right: 3vw;
+      text-align: left;
+    }
+
+    h2 {
+      padding-top: 25vh;
+      padding-bottom: 5vh;
+      font-size: 50px;
+      @extend %review-text;
+
+      @include between {
+        padding-top: 15vh;
+      }
+
+      @include tablet {
+        padding-top: 10vh;
+        padding-bottom: 3vh;
+        padding-left: 3vw;
+        font-size: 40px;
+      }
+
+      @include smallTablet {
+        padding-top: 5vh;
+        padding-bottom: 2vh;
+      }
+
+      @include mobile {
+        font-size: 35px;
+      }
+    }
+
+    p {
+      padding-bottom: 3vh;
+      font-size: 22px;
+      @extend %review-text;
+
+      @include tablet {
+        font-size: 18px;
+        padding-bottom: 1vh;
+        padding-left: 3vw;
+      }
+
+      @include smallTablet {
+        padding-bottom: 0;
+      }
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &--btn {
+    display: grid;
+    justify-items: left;
+    margin: 0 auto;
+    z-index: 1;
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 10vw;
+
+    @include tablet {
+      padding-left: 3vw;
+    }
+  }
+}
+
+// Slides
+.slides {
+  background-color: $brick;
+
+  @include tablet {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 2;
+    max-height: 50vh;
+    min-height: 600px;
+  }
+
+  @include smallTablet {
+    max-height: 750px;
+  }
+
+  &__container {
+    grid-column: 2 / span 1;
+    border-radius: 2px;
+    position: relative;
+    background: $white;
+    margin-left: 0vw;
+    margin-right: 10vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    box-shadow: 0px 8px 16px 0px $shadow;
+    max-height: 800px;
+
+    @include tablet {
+      margin-left: 5vw;
+      margin-right: 5vw;
+      margin-top: 5vh;
+      min-height: 500px;
+    }
+
+    @include smallTablet {
+      margin-top: 0;
+      max-height: 700px;
+    }
+  }
+
+  &__user {
+    color: $black;
+    text-align: left;
+    padding-left: 50px;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: -10vh;
+
+    a {
+      font-weight: 100;
+      color: $charcoal;
+      font-size: 15px;
+    }
+  }
+
+  &__quotation1,
+  &__quotation2 {
+    font-size: 80px;
+    color: $blue;
+
+    @include mobile {
+      font-size: 70px;
+    }
+  }
+
+  &__quotation1 {
+    text-align: left;
+  }
+
+  &__quotation2 {
+    text-align: right;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: $charcoal;
+  }
+}
+
+.mySlides {
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+
+.btn--container {
+  text-align: center;
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  align-items: center;
+  justify-items: center;
+
+  @include tablet {
+    text-align: left;
+    padding-left: 10vh;
+  }
+
+  @include smallTablet {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  &-prev,
+  &-next {
+    cursor: pointer;
+    width: auto;
+    padding: 16px;
+    color: lightblue;
+    font-weight: bold;
+    font-size: 30px;
+    user-select: none;
+
+    @include mobile {
+      font-size: 35px;
+    }
+  }
+
+  &-prev:hover,
+  &-next:hover {
+    color: $blue;
+    transition: 0.3s;
+  }
+
+  &-dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: peachpuff;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+
+    @include mobile {
+      height: 12px;
+      width: 12px;
+    }
+  }
+
+  .active,
+  &-dot:hover {
+    background-color: $brick;
+    height: 14px;
+    width: 14px;
+
+    @include mobile {
+      height: 14px;
+      width: 14px;
+    }
+  }
+}
+
+.review > div {
+  text-align: center;
+  padding: 0;
+}
+
+// Capabilities Section
+
+.capabilities {
+  background-color: $white;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  h2 {
+    margin-bottom: 25px;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 200;
+    cursor: pointer;
+  }
+}
+
+#panel,
+#flip {
+  padding: 5px;
+  text-align: left;
+  padding-left: 2vw;
+  background-color: $white;
+  border-top: solid 1px $darksilver;
+  border-bottom: solid 1px $darksilver;
+  margin-left: 25vw;
+  margin-right: 25vw;
+
+  @include tablet {
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+  background-color: $lightsilver;
+}
+
+// Contact Section
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 0px;
+  padding: 20px;
+  padding-top: 50px;
+  background-color: $lightsilver;
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid $charcoal;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  %contact-items-left {
+    padding-left: 10vw;
+    padding-right: 5vw;
+
+    @include tablet {
+      padding-left: 3vw;
+    }
+
+    @include smallTablet {
+      padding-right: 3vw;
+      padding-left: 3vw;
+    }
+  }
+
+  %contact-items-right {
+    padding-right: 10vw;
+
+    @include tablet {
+      padding-right: 3vw;
+    }
+
+    @include smallTablet {
+      padding-right: 3vw;
+      padding-left: 3vw;
+    }
+  }
+
+  &__item {
+    text-align: center;
+    padding-top: 50px;
+    background-color: $lightsilver;
+  }
+  &__item1 {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    @extend %contact-items-left;
+
+    @include smallTablet {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 1;
+    }
+  }
+  &__item2 {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    @extend %contact-items-right;
+
+    @include smallTablet {
+      grid-column: 1 / span 2;
+      grid-row: 2 / span 1;
+    }
+  }
+  &__item3 {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    @extend %contact-items-left;
+
+    @include smallTablet {
+      grid-column: 1 / span 2;
+      grid-row: 3 / span 1;
+    }
+  }
+  &__item4 {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    @extend %contact-items-right;
+
+    @include smallTablet {
+      grid-column: 1 / span 2;
+      grid-row: 4 / span 1;
+    }
+  }
+  &__item5 {
+    grid-column: 1 / span 4;
+    grid-row: 3 / span 4;
+    padding-left: 10vw;
+    padding-right: 10vw;
+
+    @include tablet {
+      padding-right: 3vw;
+      padding-left: 3vw;
+    }
+
+    @include smallTablet {
+      grid-column: 1 / span 2;
+      grid-row: 5 / span 1;
+    }
+  }
+  &__item6 {
+    grid-column: 2 / span 1;
+    grid-row: 7 / span 1;
+    margin-right: 10vw;
+    display: grid;
+    align-items: center;
+    justify-content: right;
+
+    @include tablet {
+      margin-right: 3vw;
+    }
+
+    @include smallTablet {
+      grid-column: 1 / span 2;
+      grid-row: 6 / span 1;
+      justify-content: stretch;
+      margin-left: 3vw;
+      margin-top: -2vh;
+    }
+  }
+}
+
+.contact > div {
+  text-align: center;
+  padding: 0;
+}
+
+// Footer Section
+
+.footer {
+  background-color: $brick;
+  height: 30px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  @include mobile {
+    height: 45px;
+  }
+
+  p {
+    color: $white;
+    text-align: center;
+
+    @include mobile {
+      font-size: 15px;
+    }
+  }
+}
